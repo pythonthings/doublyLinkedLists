@@ -38,6 +38,22 @@ class Lists:
             #point the node after the new nodes previous pointer back to the new node
             new_node.next.prev = new_node
 
+    def append(self,data):
+        new_node = Node(data)
+        #set the next of the new node to none since it will be the new tail node
+        new_node.next = None
+        #if list is empty node is the new head
+        if self.head is None:
+            self.head = new_node
+
+        #get the last node
+        find_last = self.head
+        while(find_last.next):
+            find_last = find_last.next
+        #point last node to new node
+        find_last.next = new_node
+        new_node.prev = find_last
+
     def print_list(self):
         node = self.head
         print('In order: ')
@@ -60,4 +76,5 @@ list.push(3)
 list.push(3)
 list.push(3)
 list.insert_after(list.head.next,55)
+list.append(100)
 list.print_list()
