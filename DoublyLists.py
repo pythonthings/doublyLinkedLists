@@ -67,14 +67,3 @@ class Lists:
         while(find_last):
             print(find_last.data)
             find_last = find_last.prev
-
-
-list = Lists()
-list.push(6)
-list.push(3)
-list.push(3)
-list.push(3)
-list.push(3)
-list.insert_after(list.head.next,55)
-list.append(100)
-list.print_list()
